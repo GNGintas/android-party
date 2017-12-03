@@ -125,16 +125,23 @@ public class LoginActivity extends BaseActivity implements HasComponent<Activity
     @Override
     public void onEmptyUsername() {
         shortToast(getResources().getString(R.string.empty_username));
+        onGetLoginForm();
     }
 
     @Override
     public void onEmptyPassword() {
-        shortToast(getResources().getString(R.string.empty_username));
+        shortToast(getResources().getString(R.string.empty_password));
+        onGetLoginForm();
     }
 
     @Override
     public void onUnknownError() {
         shortToast(getResources().getString(R.string.error));
+        onGetLoginForm();
+    }
+
+    private void onGetLoginForm() {
+        onHideLoading();
         YoYo.with(Techniques.FadeInDown)
                 .duration(500)
                 .playOn(mainLogo);
