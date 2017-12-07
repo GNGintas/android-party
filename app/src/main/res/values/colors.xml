@@ -8,30 +8,9 @@
     <color name="colorControlNormal">#FF8800</color>
     <color name="colorControlActivated">#FF8800</color>
 
-    <color name="action_bar">#5f5f5f</color>
-
     <color name="white">#FFFFFF</color>
     <color name="grey">#b3b3b3</color>
     <color name="darker_grey">#b2b2b2</color>
-    <color name="black">#000000</color>
-    <color name="dialog">#363636</color>
 
-    <color name="searching_for_driver">#ff3535</color>
-    <color name="driver_is_found">#00c406</color>
-    <color name="driver_is_arrived">#FF8800</color>
-    <color name="with_passenger">#3f35ff</color>
-
-    <color name="car_is_here_dark">#32ba5f</color>
-    <color name="car_is_here_light">#35c966</color>
-    <color name="car_will_be_dark">#ffaf00</color>
-    <color name="car_will_be_light">#ffc000</color>
-    <color name="order_going_dark">#c4324a</color>
-    <color name="order_going_light">#d33650</color>
-    <color name="order_accept_dark">#6f8a88</color>
-    <color name="order_accept_light">#789593</color>
-
-    <color name="light_red">#ffee4444</color>
-    <color name="dark_red">#ffcc0000</color>
-    <color name="solid_red">#f80606</color>
     <color name="transparent">#00000000</color>
 </resources>
