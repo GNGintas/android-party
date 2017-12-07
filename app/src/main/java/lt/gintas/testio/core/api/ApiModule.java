@@ -2,6 +2,7 @@ package lt.gintas.testio.core.api;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,13 +35,13 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    public Gson provideGson() {
+    Gson provideGson() {
         return new GsonBuilder().create();
     }
 
     @Provides
     @Singleton
-    AppService provideTaxiService(Application application) {
+    AppService provideAppService(Application application) {
         return new Retrofit.Builder()
                 .baseUrl(application.getString(R.string.backend_url))
                 .client(getOkHttpClient(application.getApplicationContext()))
@@ -51,7 +52,7 @@ public class ApiModule {
 
     private Interceptor headerAuthorizationInterceptor = new Interceptor() {
         @Override
-        public okhttp3.Response intercept(Chain chain) throws IOException {
+        public okhttp3.Response intercept(@NonNull Chain chain) throws IOException {
             Request request = chain.request();
             Headers headers = request.headers().newBuilder().build();
             request = request.newBuilder().headers(headers).build();

@@ -49,8 +49,8 @@ public class ServersAdapter extends RecyclerView.Adapter<ServersAdapter.ViewHold
         View line;
         ViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.name);
-            distance = (TextView) itemView.findViewById(R.id.distance);
+            name = itemView.findViewById(R.id.name);
+            distance = itemView.findViewById(R.id.distance);
             line = itemView.findViewById(R.id.line);
         }
     }

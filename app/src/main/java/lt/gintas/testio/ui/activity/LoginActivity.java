@@ -58,19 +58,6 @@ public class LoginActivity extends BaseActivity implements HasComponent<Activity
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        mLoginPresenter.resume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mLoginPresenter.pause();
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
         mLoginPresenter.destroy();
@@ -117,7 +104,7 @@ public class LoginActivity extends BaseActivity implements HasComponent<Activity
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mLoginPresenter.login(mPhone.getText().toString(), mPassword.getText().toString(), true);
+                mLoginPresenter.login(mPhone.getText().toString(), mPassword.getText().toString());
             }
         }, 500);
     }

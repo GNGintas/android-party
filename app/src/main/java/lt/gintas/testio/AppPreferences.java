@@ -55,20 +55,12 @@ public class AppPreferences {
         return mSharedPrefs.getLong(key, defaultValue);
     }
 
-    public void setLoggedIn(boolean loggedIn) {
-        apply("loggedIn", loggedIn);
-    }
-
-    public boolean isLoggedIn() {
-        return getBoolean("loggedIn", false);
-    }
-
     public void setUser(String user) {
         apply("user", user);
     }
 
     public String getUser() {
-        return getString("user", "");
+        return getString("user", "{}");
     }
 
 }

@@ -4,7 +4,6 @@ import android.app.Application;
 
 import lt.gintas.testio.core.CoreModule;
 import lt.gintas.testio.core.api.ApiModule;
-import lt.gintas.testio.core.controller.ControllerModule;
 import lt.gintas.testio.di.Dagger2Helper;
 import lt.gintas.testio.di.component.AppComponent;
 import lt.gintas.testio.di.module.AppModule;
@@ -36,8 +35,7 @@ public class App extends Application {
         mComponent = Dagger2Helper.createComponent(AppComponent.class, new AppModule(this),
                 new SystemServiceModule(),
                 new CoreModule(),
-                new ApiModule(),
-                new ControllerModule());
+                new ApiModule());
     }
 
 }

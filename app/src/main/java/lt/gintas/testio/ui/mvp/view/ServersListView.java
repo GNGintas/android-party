@@ -5,13 +5,12 @@ import java.util.List;
 import lt.gintas.testio.core.model.ServerItem;
 
 /**
- * Created by Gintautas on 2016-12-13.
+ * Created by gintautas on 07/12/2017.
  */
 
-public interface MainView extends View {
+public interface ServersListView extends View {
 
     void onServerListLoaded(List<ServerItem> serverItems);
-
     void onError();
 
 }

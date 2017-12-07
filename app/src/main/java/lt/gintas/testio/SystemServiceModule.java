@@ -17,11 +17,6 @@ import lt.gintas.testio.util.NetworkStateManager;
 public class SystemServiceModule {
 
     @Provides
-    Context provideContext(Application application){
-        return application;
-    }
-
-    @Provides
     @Singleton
     ConnectivityManager provideConnectivityManager(Application application) {
         return (ConnectivityManager) application.getSystemService(Context.CONNECTIVITY_SERVICE);

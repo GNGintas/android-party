@@ -1,7 +1,6 @@
 package lt.gintas.testio.di.module;
 
 import android.app.Activity;
-import android.app.Application;
 
 import com.google.gson.Gson;
 
@@ -33,10 +32,9 @@ public class ActivityModule {
 
     @Provides
     @PerActivity
-    public LoginManager provideTaxiManager(Application application, AppPreferences preferences,
-                                           AppService appService, NetworkStateManager networkStateManager, Gson gson) {
-        return new LoginManager(application, preferences, appService, networkStateManager, gson);
+    LoginManager provideLoginManager(AppPreferences preferences, AppService appService,
+                                     NetworkStateManager networkStateManager, Gson gson) {
+        return new LoginManager(preferences, appService, networkStateManager, gson);
     }
-
 
 }

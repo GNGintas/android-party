@@ -1,7 +1,5 @@
 package lt.gintas.testio.ui.mvp.presenter;
 
-import android.os.Bundle;
-
 import javax.inject.Inject;
 
 import io.reactivex.Flowable;
@@ -35,38 +33,22 @@ public class LoginPresenter implements Presenter<LoginView> {
     }
 
     @Override
-    public void resume() {
-    }
-
-    @Override
-    public void pause() {
-    }
-
-    @Override
     public void destroy() {
         mView = null;
         if (mSubscriptions != null && !mSubscriptions.isDisposed())
             mSubscriptions.dispose();
     }
 
-    @Override
-    public void save(Bundle outState) {
-    }
-
-    @Override
-    public void restore(Bundle savedInstanceState) {
-    }
-
-    public void login(final String phone, final String password, final boolean rememberMe) {
-        if (phone.isEmpty() || password.isEmpty()) {
-            if (phone.isEmpty())
+    public void login(final String username, final String password) {
+        if (username.isEmpty() || password.isEmpty()) {
+            if (username.isEmpty())
                 mView.onEmptyUsername();
             if (password.isEmpty())
                 mView.onEmptyPassword();
             return;
         }
 
-        mSubscriptions.add(mManager.login(phone, password, rememberMe).subscribeOn(Schedulers.io())
+        mSubscriptions.add(mManager.login(username, password).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .onErrorResumeNext(new Function<Throwable, Flowable<? extends Boolean>>() {
                 @Override

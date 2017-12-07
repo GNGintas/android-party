@@ -14,7 +14,8 @@
         android:name="lt.gintas.testio.App">
 
         <activity android:name="lt.gintas.testio.ui.activity.LoginActivity"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,7 +24,8 @@
 
         <activity android:name="lt.gintas.testio.ui.activity.MainActivity"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="stateHidden|adjustPan"/>
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
 
     </application>
 

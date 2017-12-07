@@ -38,20 +38,10 @@ public class Dagger2Helper {
         String fqn = componentClass.getName();
 
         String packageName = componentClass.getPackage().getName();
-        // Accounts for inner classes, ie MyApplication$Component
         String simpleName = fqn.substring(packageName.length() + 1);
         String generatedName = (packageName + ".Dagger" + simpleName).replace('$', '_');
 
         try {
-            /*HashMap<Class<?>, Method> methodsCache = new HashMap<>();
-            for (Method method : componentClass.getMethods()) {
-                Class<?>[] params = method.getParameterTypes();
-                if (params.length == 1)
-                    methodsCache.put(params[0], method);
-            }
-            componentsMethodsCache.put(componentClass, methodsCache);*/
-
-
             Class<?> generatedClass = Class.forName(generatedName);
             Object builder = generatedClass.getMethod("builder").invoke(null);
 

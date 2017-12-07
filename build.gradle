@@ -3,21 +3,39 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    minSdkVersion = 19
+    targetSdkVersion = 26
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
+
+    androidSupportVersion = '26.1.0'
+    dagger2Version = '2.13'
+    rxjava2Version = '2.1.7'
+    rxandroidVersion = '2.0.1'
+    okHttp3Version = '3.9.1'
+    retrofit2Version = '2.3.0'
+    butterKnifeVersion = '8.8.1'
+    timberVersion = '4.6.0'
+    daimajiaEasing = '2.0'
+    daimajiaAndroidAnimations = '2.3'
+    loader = '1.7'
 }

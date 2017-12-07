@@ -37,8 +37,10 @@ public class LoadingDialog {
 
             dialog.setCancelable(false);
             dialog.setCanceledOnTouchOutside(false);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-            dialog.getWindow().setDimAmount(0);
+            if (dialog.getWindow() != null) {
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialog.getWindow().setDimAmount(0);
+            }
         }
 
         try {
@@ -66,7 +68,7 @@ public class LoadingDialog {
         public Builder(Activity activity) {
             mActivity = activity;
             mView = LayoutInflater.from(activity).inflate(R.layout.dialog_loading, null);
-            mProgress = (ProgressWheel) mView.findViewById(R.id.progress_wheel);
+            mProgress = mView.findViewById(R.id.progress_wheel);
         }
 
         public LoadingDialog build() {
